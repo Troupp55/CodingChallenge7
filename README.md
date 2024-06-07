@@ -1,1 +1,1 @@
-# CodingChallenge7
+This project is a basic customer feedback portal built using HTML and JavaScript. It allows users to submit their feedback, including their name, a rating, and comments. The submitted feedback is then displayed dynamically on the same page. The project demonstrates form handling, validation, and dynamic DOM manipulation
