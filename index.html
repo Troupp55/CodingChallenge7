@@ -44,9 +44,28 @@
 <div id="feedback-display"></div>
 
 <script>
-    
-</head>
-<body>
-    <h1>Customer Feedback Portal</h1>
+ document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('feedback-form');
+            form.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const rating = document.getElementById('rating').value;
+                const comments = document.getElementById('comments').value;
+
+                if (!name || !rating || !comments) {
+                    alert('Please fill out all fields.');
+                    return;
+                }
+
+                const feedbackDisplay = document.getElementById('feedback-display');
+                const feedbackItem = document.createElement('div');
+                feedbackItem.innerHTML = `<strong>Name:</strong> ${name} <br> <strong>Rating:</strong> ${rating} <br> <strong>Comments:</strong> ${comments}`;
+                feedbackDisplay.appendChild(feedbackItem);
+
+                form.reset();
+            });
+        });
+</script>
 </body>
 </html>
